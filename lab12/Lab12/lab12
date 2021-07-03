@@ -1,0 +1,62 @@
+1. 
+tipul cifrului folosit: sha256WithRSAEncryption
+entitatea care a eliberat certificatul: C = US, O = Google Trust Services, CN = GTS CA 1O1
+validitate:
+	Not Before: Apr 13 10:11:15 2021 GMT
+    Not After : Jul  6 10:11:14 2021 GMT
+cheia publica:
+	Public-Key: (256 bit)
+                pub:
+                    04:0c:1a:a4:a1:17:13:84:0f:13:c7:64:46:de:fe:
+                    9d:43:6e:79:67:bc:03:99:82:86:5b:b2:dd:de:e5:
+                    6b:d3:d9:14:80:8e:e2:12:36:62:b9:0f:f8:2c:81:
+                    97:58:0c:4f:29:fe:2e:1f:f2:d9:45:81:d8:12:dc:
+                    e7:21:ec:ed:e2
+
+
+2.
+Informatiile din captura de trafic arata ca http surprinde si ce se transmite de la server, si ce se transmite
+de la client. Astfel, se pot obtine informatiile de login. In https nu se mai pot vedea datele deoarece mesajul
+e encriptat.
+
+3.
+Comanda ajutatoare: curl -vvv https://login.onlineplanservice.com/Login.aspx?ReturnUrl=%2f
+
+versiune TLS folosita: TLS 1.2
+cipher suits: 
+    Cipher Suite: TLS_AES_256_GCM_SHA384 (0x1302)
+    Cipher Suite: TLS_CHACHA20_POLY1305_SHA256 (0x1303)
+    Cipher Suite: TLS_AES_128_GCM_SHA256 (0x1301)
+    Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_256_GCM_SHA384 (0xc02c)
+    Cipher Suite: TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (0xc030)
+    Cipher Suite: TLS_DHE_RSA_WITH_AES_256_GCM_SHA384 (0x009f)
+    Cipher Suite: TLS_ECDHE_ECDSA_WITH_CHACHA20_POLY1305_SHA256 (0xcca9)
+    Cipher Suite: TLS_ECDHE_RSA_WITH_CHACHA20_POLY1305_SHA256 (0xcca8)
+    Cipher Suite: TLS_DHE_RSA_WITH_CHACHA20_POLY1305_SHA256 (0xccaa)
+    Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_GCM_SHA256 (0xc02b)
+    Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_GCM_SHA256 (0xc02f)
+    Cipher Suite: TLS_DHE_RSA_WITH_AES_128_GCM_SHA256 (0x009e)
+    Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA384 (0xc024)
+    Cipher Suite: TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA384 (0xc028)
+    Cipher Suite: TLS_DHE_RSA_WITH_AES_256_CBC_SHA256 (0x006b)
+    Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA256 (0xc023)
+    Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA256 (0xc027)
+    Cipher Suite: TLS_DHE_RSA_WITH_AES_128_CBC_SHA256 (0x0067)
+    Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_256_CBC_SHA (0xc00a)
+    Cipher Suite: TLS_ECDHE_RSA_WITH_AES_256_CBC_SHA (0xc014)
+    Cipher Suite: TLS_DHE_RSA_WITH_AES_256_CBC_SHA (0x0039)
+    Cipher Suite: TLS_ECDHE_ECDSA_WITH_AES_128_CBC_SHA (0xc009)
+    Cipher Suite: TLS_ECDHE_RSA_WITH_AES_128_CBC_SHA (0xc013)
+    Cipher Suite: TLS_DHE_RSA_WITH_AES_128_CBC_SHA (0x0033)
+    Cipher Suite: TLS_RSA_WITH_AES_256_GCM_SHA384 (0x009d)
+    Cipher Suite: TLS_RSA_WITH_AES_128_GCM_SHA256 (0x009c)
+    Cipher Suite: TLS_RSA_WITH_AES_256_CBC_SHA256 (0x003d)
+    Cipher Suite: TLS_RSA_WITH_AES_128_CBC_SHA256 (0x003c)
+    Cipher Suite: TLS_RSA_WITH_AES_256_CBC_SHA (0x0035)
+    Cipher Suite: TLS_RSA_WITH_AES_128_CBC_SHA (0x002f)
+    Cipher Suite: TLS_EMPTY_RENEGOTIATION_INFO_SCSV (0x00ff)
+cipher suite:
+	Cipher Suite: TLS_ECDHE_RSA_WITH_AES_256_GCM_SHA384 (0xc030)
+
+4.
+Toate informatiile sunt criptate. Vezi poza.

@@ -1,0 +1,23 @@
+Tema 1 PC ,2020-2021
+Saceleanu Andrei-Iulian,321CB
+
+Router-ul stocheaza tabelele ARP si de rutare in vectori alocati pe heap.
+Intr-o bucla infinita,se preia un mesaj venit pe oricare dintre interfete si,
+in functie de tipul si destinatia acestuia,se proceseaza corespunzator sau se
+trimit raspunsuri la acele mesaje de tip request.
+Daca un mesaj nu are toate informatiile necesare pentru a fi trimis(eg. nu
+se cunoaste adresa ARP a urmatorului nod pe calea catre destinatie),se 
+genereaza request-uri pentru acestea ,iar mesajul se retine intr-un cache
+modelat cu ajutorul unei cozi.La primirea unui reply,se verifica cache-ul
+si se trimit acele mesaje care,in acest moment,pot fi trimise.
+Cautarea rutei catre destinatie se face prin Longest Prefix Match aplicat
+asupra unui trie.Fiecare nivel al arborelui modeleaza un octet dintr-o adresa
+IP.Nodurile frunza vor retine referinte(pointeri) catre entry-urile asociate
+din tabela de rutare.
+In cautarea rutei catre un IP destinatie,se porneste cu masca cea mai specifica
+(255.255.255.255) ,se izoleaza prefixul care se cauta in trie.Daca a fost gasit
+si masca entry-ului asociat este aceeasi cu cea considerata la iteratia curenta,
+am gasit ruta cea mai specifica si se intoarce adresa acelui entry.Absenta unei
+rute in tabela de rutare va fi marcata printr-un rezultat NULL.
+Dificultatile majore au fost gestionarea network vs host order si interactiunea
+cu API-ul de biblioteca sau cel furnizat.

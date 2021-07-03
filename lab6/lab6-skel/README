@@ -1,0 +1,9 @@
+Lab 6 PC,2020-2021
+Saceleanu Andrei-Iulian,321CB
+
+Clientul trimite un fisier cu caractere alfanumerice(client_random) prin UDP
+iar serverul va receptiona datele intr-un buffer.Din acest buffer,se va
+scrie intr-un nou fisier(server_random).Operatia se repeta cat timp clientul
+mai are caractere de citit din fisier.
+In server,se face bind pe socket in asa fel incat sa poata primii date de la
+o anumita adresa,fara restrictii (INADDR_ANY). 

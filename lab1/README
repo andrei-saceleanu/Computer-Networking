@@ -1,0 +1,20 @@
+Lab 1 PC ,2020-2021
+Saceleanu Andrei-Iulian,321CB
+
+
+1. Se deschide fisierul dat ca parametru,se citeste caracter cu caracter si
+se afiseaza la stdout.In caz de eroare la operatiile IO,programul iese din
+executie cu status -1.
+
+Rulare: ./my_cat file_name
+
+
+2. Se deschide fisierul dat ca parametru si se plaseaza cursorul din fisier
+inainte de EOF cu ajutorul lseek.Se citesc caracterele in sens invers intr-un
+buffer care va stoca fiecare linie din fisier.Cand s-a ajuns la un \n sau la
+inceputul fisierului(i==0),se afiseaza linia iar bufferul se reseteaza(len=0).
+Fiecare read deplaseaza cursorul inainte cu un caracter astfel lseek se face cu
+-2 pentru a ajunge la inceputul fisierului.In buffer,linia va aparea inversata,
+asa ca functia de afisare print_line parcurge invers vectorul.
+
+Rulare: ./my_tac file_name

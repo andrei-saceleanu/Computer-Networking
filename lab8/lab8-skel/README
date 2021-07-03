@@ -1,0 +1,18 @@
+Lab 8 PC ,2020 - 2021
+Saceleanu Andrei-Iulian,321CB
+
+Client
+-se multiplexeaza intre citirea de la tastatura (descriptorul 0) si primirea de mesaje de la server
+-clientul se inchide daca primeste de la stdin exit
+-se afiseaza mesajul primit de la server
+
+Server
+-se aplica select pentru a vedea de pe ce socketi se pot prelua date
+-daca socketul curent i este sockfd,atunci este o noua conexiune
+-toti ceilalti clienti sunt instiintati de acest nou client prin string-ul notification
+-clientul nou venit primeste o lista cu clientii deja conectati
+-daca i nu este sockfd,se citesc date cu recv.
+-daca nr. de bytes receptionati este 0,inseamna ca s-a inchis o conexiune(ceilalti clienti sunt anuntati).
+-altfel,mesajul este forwardat catre destinatie(** mesajul are forma "descriptor_dest continut").
+-s-a ales ca descriptor_dest = 2 sa poata juca rolul de destinatie broadcast.
+-serverul afiseaza continutul mesajului primit.

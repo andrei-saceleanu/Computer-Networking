@@ -1,0 +1,23 @@
+Lab 3 PC,2020-2021
+Saceleanu Andrei-Iulian, 321CB
+
+Sender
+-in primul for ,se trimit WINDOW_SIZE pachete fara confirmare/ACK.
+-apoi,la fiecare ACK primit,se poate continua cu un nou pachet trimis.
+-la final,se asteapta ACK-urile pentru cadrele care inca nu au primit raspuns,
+de exemplu pentru primele cadre.
+
+Receiver
+-primeste mesaje ,verifica checksum-ul si trimite ACK sau NACK corespunzator.
+
+Longitudinal redundancy check
+-in cod N-ul e setat la 8 pentru a permite parcurgerea caracter cu caracter.
+-pentru alte valori mai neuzuale ,primul for din calculul checksum-ului si
+instructiunea cu operatii pe biti ar trebui oarecum modificate.
+
+
+Alte idei
+-se trimit COUNT mesaje intre sender si receiver,toate fiind identice,
+constand in primele MSGSIZE-4 caractere din fisierul dat ca parametru
+-am pus MSGSIZE-4 pentru ca parea ca checksum-ul (unsigned int=4Bytes) 
+era suprascris cand lasam MSGSIZE;

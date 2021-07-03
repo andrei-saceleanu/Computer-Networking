@@ -1,0 +1,28 @@
+Lab 4 PC,2020-2021
+Saceleanu Andrei-Iulian, 321CB
+
+Implementare get_best_route
+-pentru fiecare entry din tabela de rutare,se foloseste mask-ul din entry si
+se obtine adresa de retea din dest_ip.Daca e egal cu prefixul din entry,avem
+un match.Daca vor exista mai multe match-uri,se ia cel cu masca cel mai mare
+(longest prefix);
+-in caz ca nu avem match-uri,variabila returnata best ramane null;
+
+Implementare get_arp_entry
+-se intoarce un pointer catre entry-ul arp cu ip-ul corespunzator(traversare
+liniara a tabelei ARP);
+
+Procesul de forwarding urmeaza pasii indicati prin TODO
+
+
+Bonus:
+1.-am implementat parsarea tabelei de rutare in functia my_read_rtable
+  -citesc linie cu linie fisierul rtable.txt si preiau informatiile fiecarui
+entry
+2.-am implementat o functie alternativa get_best_route_sorted care face cautarea
+pe tabela de rutare sortata descrescator dupa masca
+  -am folosit qsort si o functie de comparatie intre route_table entry-uri.
+
+
+
+

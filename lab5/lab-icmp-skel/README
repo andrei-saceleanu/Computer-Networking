@@ -1,0 +1,13 @@
+Lab 5 PC ,2020-2021
+Saceleanu Andrei-Iulian,321CB
+
+Ping
+	-se initializeaza headerele IP si ICMP cu informatiile relevante pentru
+un mesaj de tip ICMP_ECHO,se preia reply-ul si se afiseaza cateva informatii
+din acesta
+
+Traceroute
+	-intr-o bucla infinita,se trimit pachete ICMP cu ttl crescator 
+	-din fiecare reply se preia adresa sursa si se afiseaza
+	-daca reply-ul este de tip 0 ,s-a ajuns la destinatie si se iese
+din bucla

@@ -1,0 +1,9 @@
+Lab 7 PC ,2020-2021
+Saceleanu Andrei-Iulian,321CB
+
+S-au realizat pasii de initializare la client(socket,connect) si server
+(socket,bind,listen,accept).
+Serverul se comporta ca ecoul clientului (run_echo_server)
+Serverul mediaza comunicarea intre 2 clienti TCP.(run_chat_server)
+In functia de chat,pentru clienti,un mesaj nu se primeste pana cand nu se 
+trimite urmatorul mesaj.

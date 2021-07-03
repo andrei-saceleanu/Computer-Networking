@@ -1,0 +1,23 @@
+Lab 2 PC,2020-2021
+Saceleanu Andrei-Iulian, 321CB
+
+"ceva" e fisierul care se transmite(generat caractere random cu dd)
+
+Sender(./send ceva)
+
+Sender-ul preia numele fisierului dat ca parametru si il transmite receptorului
+intr-un mesaj.Cu lseek,se muta cursorul la finalul fisierului si se preia
+offset-ul(dimensiunea fisierului in acest caz) si se transmite receptorului in
+alt mesaj.Apoi,se citesc bucati de maxim MAX_LEN caractere din fisier si se
+transmit mesaje care au ca payload portiunea curenta.Fiecare operatie de send
+a transmitatorului este insotita de asteptarea confirmarii(ACK) din partea
+receptorului pentru a trece la urmatoarea actiune.Operatiile I/O sau cele
+asociate legaturii de date sunt insotite de verificarea posibilelor erori.
+
+Receiver(./recv)
+Receptorul trimite confirmarile(ACK) prin intermediul mesajului r iar pachetele
+sosite la acesta ajung in mesajul t.Receptorul initializeaza un nou fisier 
+numit file_name-netsent.In remaining se retine dimensiunea asteptata a 
+fisierului transmis.Se preiau pachete cu continutul fisierului cat timp 
+remaining este nenul.Dupa fiecare mesaj preluat cu succes (scris in fisierul
+nou creat),se scad din remaining cate caractere a avut payload-ul curent.

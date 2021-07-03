@@ -1,0 +1,78 @@
+Tema 3 PC,2020-2021
+Client Web
+Saceleanu Andrei-Iulian,321CB
+
+Programul client ruleaza sub forma unei console interactive,realizandu-se
+operatii diferite in functie de comanda introdusa de utilizator.
+Pentru fiecare comanda ,conexiunea cu serverul se deschide si se inchide dupa
+finalizarea comunicarii curente.
+
+register
+-se citesc username si parola;
+-se construieste un obiect JSON ce va fi trimis intr-un POST request la server;
+*se verifica faptul ca username-ul si parola nu sunt empty;
+*se afiseaza eroare in caz ca username-ul este deja folosit;
+
+login
+-se citesc username si parola;
+-se construieste un obiect JSON ce va fi trimis intr-un POST request la server;
+-se preia din raspunsul de la server cookie-ul de sesiune pentru a putea 
+dovedi autentificarea la comenzi ulterioare;
+*se verifica faptul ca nu exista deja un cookie de sesiune(daca exista,se 
+semnaleaza ca utilizatorul este deja logat);
+*se afiseaza eroare daca credentialele nu se potrivesc;
+
+enter_library
+-se trimite GET request catre server pentru a obtine acces in biblioteca
+-se preia din response tokenul JWT pentru a putea dovedi accesul la biblioteca
+la comenzile ulterioare;
+*se verifica existenta unui cookie de sesiune(daca este absent,utilizatorul
+este instiintat ca trebuie sa se logheze);
+*se verifica existenta unui token JWT(daca este deja prezent,utilizatorul
+este instiintat ca are deja acces datorita acelui token);
+**in testarile realizate,s-a observat ca apare o anumita eroare de cateva ori
+(you are not logged in,chiar daca login s-a realizat anterior);
+workaround-ul a fost sa sterg cookie-ul de sesiune si tokenul si sa fac
+astfel utilizatorul sa se logheze inca o data.
+
+get_books
+-se trimite GET request catre server pentru a obtine lista de carti din
+biblioteca;
+-din raspunsul serverului se preia doar lista de carti,in format JSON;
+*se verifica existenta unui token JWT(daca este absent,utilizatorul
+trebuie sa realizeze un enter_library inainte).
+
+get_book
+-se trimite GET request catre server la o ruta particularizata(dupa id-ul
+cartii care se doreste a fi vizualizata);
+-din raspunsul serverului se preia doar informatiile asociate cartii,in
+format JSON;
+*se verifica existenta unui token JWT(daca este absent,utilizatorul
+trebuie sa realizeze un enter_library inainte);
+*se afiseaza eroare daca nu s-a gasit carte cu id-ul cerut;
+
+add_book
+-se trimite POST request la server pentru a adauga o carte in biblioteca
+*se verifica existenta unui token JWT(daca este absent,utilizatorul
+trebuie sa realizeze un enter_library inainte).
+*se verifica faptul ca niciun camp nu este empty iar page_count respecta
+formatarea(numar pozitiv);se afiseaza eroarea potrivita,daca exista;
+*indeplinirea cu succes a comenzii este insotita de un mesaj corespunzator;
+
+delete_book
+-se trimite DELETE request catre server la o ruta particularizata(dupa id-ul
+cartii care se doreste a fi stearsa);
+*se verifica existenta unui token JWT(daca este absent,utilizatorul
+trebuie sa realizeze un enter_library inainte);
+*se afiseaza eroare daca nu s-a gasit carte de sters cu id-ul cerut;
+*indeplinirea cu succes a comenzii este insotita de un mesaj corespunzator;
+
+logout
+-se trimite GET request catre server;
+*se verifica existenta unui cookie de sesiune(daca este absent,utilizatorul
+este instiintat ca trebuie sa se logheze);
+*indeplinirea cu succes a comenzii este insotita de un mesaj corespunzator+
+se sterg cookie-ul de sesiune si token-ul JWT
+
+exit
+-se inchide programul

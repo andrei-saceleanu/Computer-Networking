@@ -1,0 +1,69 @@
+2.
+a)
+dig A single-v4.protocoale.club +short
+127.0.0.1
+dig AAAA single-v6.protocoale.club +short
+::1
+dig NS dorinel.protocoale.club +short
+potato.dfilip.xyz.
+dig MX protocoale.club
+;; ANSWER SECTION:
+protocoale.club.	300	IN	MX	30 alt3.gmail-smtp-in.l.google.com.
+protocoale.club.	300	IN	MX	10 alt1.gmail-smtp-in.l.google.com.
+protocoale.club.	300	IN	MX	20 alt2.gmail-smtp-in.l.google.com.
+etc.
+
+b)
+dig A single.protocoale.club +short
+127.0.0.1
+dig AAAA single.protocoale.club +short
+::1
+etc.
+
+c)
+dig MX protocoale.club
+;; ANSWER SECTION:
+protocoale.club.	300	IN	MX	30 alt3.gmail-smtp-in.l.google.com.
+protocoale.club.	300	IN	MX	10 alt1.gmail-smtp-in.l.google.com.
+protocoale.club.	300	IN	MX	20 alt2.gmail-smtp-in.l.google.com.
+etc.
+
+d)
+dig @199.9.14.201 google.com +noall +authority
+; <<>> DiG 9.11.5-P4-5.1ubuntu2.2-Ubuntu <<>> @199.9.14.201 google.com +noall +authority
+; (1 server found)
+;; global options: +cmd
+com.			172800	IN	NS	a.gtld-servers.net.
+com.			172800	IN	NS	b.gtld-servers.net.
+com.			172800	IN	NS	c.gtld-servers.net.
+com.			172800	IN	NS	d.gtld-servers.net.
+com.			172800	IN	NS	e.gtld-servers.net.
+com.			172800	IN	NS	f.gtld-servers.net.
+com.			172800	IN	NS	g.gtld-servers.net.
+com.			172800	IN	NS	h.gtld-servers.net.
+com.			172800	IN	NS	i.gtld-servers.net.
+com.			172800	IN	NS	j.gtld-servers.net.
+com.			172800	IN	NS	k.gtld-servers.net.
+com.			172800	IN	NS	l.gtld-servers.net.
+com.			172800	IN	NS	m.gtld-servers.net.
+
+e)
+dig @199.9.14.201 google.com -> dig @192.55.83.30 google.com -> dig @216.239.34.10 google.com +short ->
+-> 216.58.201.78
+dig @82.103.129.72 google.com +short -> 216.58.211.142
+
+f)
+dig @8.8.8.8 -f queries.txt
+
+g)
+dig test.dorinel.protocoale.club +noall +answer +trace
+;; ANSWER SECTION:
+test.dorinel.protocoale.club. 245 IN	A	127.0.0.42
+test.dorinel.protocoale.club. 245 IN	A	127.0.42.0
+
+h)
+dig -x 82.103.129.72  +noall +answer
+; <<>> DiG 9.11.5-P4-5.1ubuntu2.2-Ubuntu <<>> -x 82.103.129.72 +noall +answer
+;; global options: +cmd
+72.129.103.82.in-addr.arpa. 0	IN	PTR	e82-103-129-72s.asergo.com.
+reverse DNS pune numerele pentru a indica faptul ca se mapeaza un ip la un nume(util si pentru matching)
